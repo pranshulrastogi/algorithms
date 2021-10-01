@@ -2,13 +2,6 @@
 tests to test merge_sort.py in algorithms/sorting
 """
 import os
-import sys
-
-_path_to_project = os.path.join(
-    os.environ["HOME"], "Desktop", "my_projects", "algorithms"
-)
-sys.path.append(_path_to_project)
-# import test_update_path
 import random
 from sorting import merge_sort
 import unittest
