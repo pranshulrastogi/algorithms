@@ -4,6 +4,7 @@ from leetcode import (
     climbing_stairs,
     find_all_duplicates_in_an_array,
     house_robber,
+    delete_and_earn,
 )
 import unittest
 
@@ -31,4 +32,14 @@ class TestLeetcode(unittest.TestCase):
         input_output = [([1, 2, 3, 1], 4), ([2, 7, 9, 3, 1], 12), ([5], 5)]
         for input, output in input_output:
             result = house_robber.rob(input)
+            self.assertEqual(result, output)
+
+    def test_delete_and_earn(self):
+        input_output = [
+            ([3, 4, 2], 6),
+            ([2, 2, 3, 3, 3, 4], 9),
+            ([1, 1, 1, 2, 4, 5, 5, 5, 6], 18),
+        ]
+        for input, output in input_output:
+            result = delete_and_earn.deleteAndEarn(input)
             self.assertEqual(result, output)
