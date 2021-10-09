@@ -6,6 +6,7 @@ from leetcode import (
     house_robber,
     delete_and_earn,
     house_robber_ii,
+    word_search_ii,
 )
 import unittest
 
@@ -50,3 +51,23 @@ class TestLeetcode(unittest.TestCase):
         for input, output in input_output:
             result = house_robber_ii.rob(input)
             self.assertEqual(result, output)
+
+    def test_word_search_ii(self):
+        input_output = [
+            (
+                [
+                    [
+                        ["o", "a", "a", "n"],
+                        ["e", "t", "a", "e"],
+                        ["i", "h", "k", "r"],
+                        ["i", "f", "l", "v"],
+                    ],
+                    ["oath", "pea", "eat", "rain"],
+                ],
+                ["eat", "oath"],
+            ),
+            ([[["a", "a"]], ["aaa"]], []),
+        ]
+        for input, output in input_output:
+            result = word_search_ii.findWords(input[0], input[1])
+            self.assertCountEqual(result, output)
