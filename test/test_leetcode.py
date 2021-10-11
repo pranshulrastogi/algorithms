@@ -7,6 +7,7 @@ from leetcode import (
     delete_and_earn,
     house_robber_ii,
     word_search_ii,
+    break_a_palindrome,
 )
 import unittest
 
@@ -71,3 +72,9 @@ class TestLeetcode(unittest.TestCase):
         for input, output in input_output:
             result = word_search_ii.findWords(input[0], input[1])
             self.assertCountEqual(result, output)
+
+    def test_break_a_palindrome(self):
+        input_output = [("abccba", "aaccba"), ("a", ""), ("aa", "ab"), ("aba", "abb")]
+        for input, output in input_output:
+            result = break_a_palindrome.breakPalindrome(input)
+            self.assertEqual(output, result)
