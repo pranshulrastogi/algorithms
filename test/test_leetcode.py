@@ -8,6 +8,7 @@ from leetcode import (
     house_robber_ii,
     word_search_ii,
     break_a_palindrome,
+    guess_number_higher_or_lower,
 )
 import unittest
 
@@ -77,4 +78,20 @@ class TestLeetcode(unittest.TestCase):
         input_output = [("abccba", "aaccba"), ("a", ""), ("aa", "ab"), ("aba", "abb")]
         for input, output in input_output:
             result = break_a_palindrome.breakPalindrome(input)
+            self.assertEqual(output, result)
+
+    def test_guess_number_higher_or_lower(self):
+        input_output = [
+            ([10, 6], 6),
+            ([1, 1], 1),
+            ([2, 1], 1),
+            ([2, 2], 2),
+            ([500, 499], 499),
+            ([5, 5], 5),
+            ([1, 0], 0),
+        ]
+        for input_list, output in input_output:
+            input, pick = input_list
+            guess_number_higher_or_lower.set_pick(pick)
+            result = guess_number_higher_or_lower.guessNumber(input)
             self.assertEqual(output, result)
