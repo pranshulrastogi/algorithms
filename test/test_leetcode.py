@@ -9,6 +9,7 @@ from leetcode import (
     word_search_ii,
     break_a_palindrome,
     guess_number_higher_or_lower,
+    best_time_to_buy_and_sell_stock_with_cooldown,
 )
 import unittest
 
@@ -94,4 +95,10 @@ class TestLeetcode(unittest.TestCase):
             input, pick = input_list
             guess_number_higher_or_lower.set_pick(pick)
             result = guess_number_higher_or_lower.guessNumber(input)
+            self.assertEqual(output, result)
+
+    def test_best_time_to_buy_and_sell_stock_with_cooldown(self):
+        input_output = [([1, 2, 3, 0, 2], 3), ([1], 0), ([1, 2], 1)]
+        for input, output in input_output:
+            result = best_time_to_buy_and_sell_stock_with_cooldown.maxProfit(input)
             self.assertEqual(output, result)
