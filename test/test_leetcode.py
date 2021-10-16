@@ -10,6 +10,7 @@ from leetcode import (
     break_a_palindrome,
     guess_number_higher_or_lower,
     best_time_to_buy_and_sell_stock_with_cooldown,
+    best_time_to_buy_and_sell_stock_iii,
 )
 import unittest
 
@@ -102,3 +103,13 @@ class TestLeetcode(unittest.TestCase):
         for input, output in input_output:
             result = best_time_to_buy_and_sell_stock_with_cooldown.maxProfit(input)
             self.assertEqual(output, result)
+
+    def test_best_time_to_buy_and_sell_stock_iii(self):
+        input_output = [
+            ([3, 3, 5, 0, 0, 3, 1, 4], 6),
+            ([1, 2, 3, 4, 5], 4),
+            ([7, 6, 4, 3, 1], 0),
+        ]
+        for input, output in input_output:
+            result = best_time_to_buy_and_sell_stock_iii.maxProfit(input)
+            self.assertEqual(result, output)
