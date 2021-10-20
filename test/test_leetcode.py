@@ -11,6 +11,7 @@ from leetcode import (
     guess_number_higher_or_lower,
     best_time_to_buy_and_sell_stock_with_cooldown,
     best_time_to_buy_and_sell_stock_iii,
+    reverse_words_in_a_string,
 )
 import unittest
 
@@ -112,4 +113,14 @@ class TestLeetcode(unittest.TestCase):
         ]
         for input, output in input_output:
             result = best_time_to_buy_and_sell_stock_iii.maxProfit(input)
+            self.assertEqual(result, output)
+
+    def test_reverse_words_in_a_string(self):
+        input_output = [
+            ("the sky is blue", "blue is sky the"),
+            (" hello world ", "world hello"),
+            (" Bob    Loves Alice ", "Alice Loves Bob"),
+        ]
+        for input, output in input_output:
+            result = reverse_words_in_a_string.reverseWords(input)
             self.assertEqual(result, output)
