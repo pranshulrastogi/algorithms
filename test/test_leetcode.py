@@ -13,6 +13,7 @@ from leetcode import (
     best_time_to_buy_and_sell_stock_iii,
     reverse_words_in_a_string,
     sort_characters_by_frequency,
+    jump_game,
 )
 import unittest
 
@@ -135,3 +136,9 @@ class TestLeetcode(unittest.TestCase):
         for input, output in input_output:
             result = sort_characters_by_frequency.frequencySort(input)
             self.assertIn(result, output)
+
+    def test_jump_game(self):
+        input_output = [([2, 3, 1, 1, 4], True), ([3, 2, 1, 0, 4], False)]
+        for input, output in input_output:
+            result = jump_game.canJump(input)
+            self.assertEqual(result, output)

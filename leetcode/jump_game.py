@@ -4,22 +4,23 @@ Difficulty: medium
 """
 
 
-def canJump(nums) -> bool:
-    n = len(nums)
-    last_index = n - 1
-    max_ind = nums[0]  # it will tell uptil which index we can reach as of now
-    if n == 1:
-        return True
-    if n == 2:
-        if max_ind >= n - 1:
-            return True
+def canJump(nums):
+    """
+    :type nums: List[int]
+    :rtype: bool
+    """
+    l = len(nums)
+    dp = [0 for i in range(l)]
+    dp[-1] = 1
+    for i in range(l - 2, -1, -1):
+        if nums[i] == 0:
+            dp[i] = 0
         else:
-            return False
-    for i, ele in enumerate(nums[1:], start=1):
-        # this will ensure that we already reached till i or more than that
-        if max_ind >= i:
-            max_ind = max(i + ele, max_ind)
-    if max_ind >= last_index:
-        return True
-
-    return False
+            if i + nums[i] < l:
+                if i + 1 == l - 1:
+                    dp[i] = dp[i + 1]
+                else:
+                    dp[i] = max(dp[i + 1 : i + nums[i] + 1])
+            else:
+                dp[i] = 1
+    return bool(dp[0])
