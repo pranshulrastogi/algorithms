@@ -12,6 +12,7 @@ from leetcode import (
     best_time_to_buy_and_sell_stock_with_cooldown,
     best_time_to_buy_and_sell_stock_iii,
     reverse_words_in_a_string,
+    sort_characters_by_frequency,
 )
 import unittest
 
@@ -124,3 +125,13 @@ class TestLeetcode(unittest.TestCase):
         for input, output in input_output:
             result = reverse_words_in_a_string.reverseWords(input)
             self.assertEqual(result, output)
+
+    def test_sort_characters_by_frequency(self):
+        input_output = [
+            ("tree", ["eert", "eetr"]),
+            ("cccaaa", ["aaaccc", "cccaaa"]),
+            ("Aabb", ["bbAa", "bbaA"]),
+        ]
+        for input, output in input_output:
+            result = sort_characters_by_frequency.frequencySort(input)
+            self.assertIn(result, output)
