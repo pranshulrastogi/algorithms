@@ -14,6 +14,7 @@ from leetcode import (
     reverse_words_in_a_string,
     sort_characters_by_frequency,
     jump_game,
+    arranging_coins,
 )
 import unittest
 
@@ -141,4 +142,10 @@ class TestLeetcode(unittest.TestCase):
         input_output = [([2, 3, 1, 1, 4], True), ([3, 2, 1, 0, 4], False)]
         for input, output in input_output:
             result = jump_game.canJump(input)
+            self.assertEqual(result, output)
+
+    def test_arranging_coins(self):
+        input_output = [(5, 2), (2, 1), (3, 2), (8, 3), (0, 0)]
+        for input, output in input_output:
+            result = arranging_coins.arrangeCoins(input)
             self.assertEqual(result, output)
