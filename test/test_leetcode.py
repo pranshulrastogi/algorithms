@@ -15,6 +15,7 @@ from leetcode import (
     sort_characters_by_frequency,
     jump_game,
     arranging_coins,
+    unique_binary_search_trees,
 )
 import unittest
 
@@ -148,4 +149,10 @@ class TestLeetcode(unittest.TestCase):
         input_output = [(5, 2), (2, 1), (3, 2), (8, 3), (0, 0)]
         for input, output in input_output:
             result = arranging_coins.arrangeCoins(input)
+            self.assertEqual(result, output)
+
+    def test_unique_binary_search_trees(self):
+        input_output = [(1, 1), (3, 5), (4, 14), (19, 1767263190)]
+        for input, output in input_output:
+            result = unique_binary_search_trees.numTrees(input)
             self.assertEqual(result, output)
