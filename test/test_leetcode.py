@@ -16,6 +16,7 @@ from leetcode import (
     jump_game,
     arranging_coins,
     unique_binary_search_trees,
+    minimum_value_to_get_positive_step_by_step_sum,
 )
 import unittest
 
@@ -155,4 +156,10 @@ class TestLeetcode(unittest.TestCase):
         input_output = [(1, 1), (3, 5), (4, 14), (19, 1767263190)]
         for input, output in input_output:
             result = unique_binary_search_trees.numTrees(input)
+            self.assertEqual(result, output)
+
+    def test_minimum_value_to_get_positive_step_by_step_sum(self):
+        input_output = [([-3, 2, -3, 4, 2], 5), ([1, 2], 1), ([1, -2, -3], 5)]
+        for input, output in input_output:
+            result = minimum_value_to_get_positive_step_by_step_sum.minStartValue(input)
             self.assertEqual(result, output)
