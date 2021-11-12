@@ -1,4 +1,5 @@
 from unittest import result
+from datastructures import linkedlist
 from leetcode import (
     nth_tribonacci_number,
     climbing_stairs,
@@ -17,6 +18,7 @@ from leetcode import (
     arranging_coins,
     unique_binary_search_trees,
     minimum_value_to_get_positive_step_by_step_sum,
+    remove_linked_list_elements,
 )
 import unittest
 
@@ -163,3 +165,18 @@ class TestLeetcode(unittest.TestCase):
         for input, output in input_output:
             result = minimum_value_to_get_positive_step_by_step_sum.minStartValue(input)
             self.assertEqual(result, output)
+
+    def test_remove_linked_list_elements(self):
+        input_output = [
+            (([1, 2, 6, 3, 4, 5, 6], 6), [1, 2, 3, 4, 5]),
+            (([], 1), []),
+            (([7, 7, 7, 7], 7), []),
+        ]
+        for input, output in input_output:
+            lst, val = input[0], input[1]
+            # create a linked list
+            ll = linkedlist.LinkedList(lst)
+            result = remove_linked_list_elements.removeElements(ll.head, val)
+            output_ll = linkedlist.LinkedList(result, from_other_list=True)
+            print(output_ll.tolist(), output)
+            # self.assertEqual(output_ll.tolist(), output)
