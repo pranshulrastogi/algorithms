@@ -19,6 +19,7 @@ from leetcode import (
     unique_binary_search_trees,
     minimum_value_to_get_positive_step_by_step_sum,
     remove_linked_list_elements,
+    daily_temperatures,
 )
 import unittest
 
@@ -180,3 +181,13 @@ class TestLeetcode(unittest.TestCase):
             output_ll = linkedlist.LinkedList(result, from_other_list=True)
             print(output_ll.tolist(), output)
             # self.assertEqual(output_ll.tolist(), output)
+
+    def test_daily_temperatures(self):
+        input_output = [
+            ([73, 74, 75, 71, 69, 72, 76, 73], [1, 1, 4, 2, 1, 1, 0, 0]),
+            ([30, 40, 50, 60], [1, 1, 1, 0]),
+            ([30, 60, 90], [1, 1, 0]),
+        ]
+        for input, output in input_output:
+            result = daily_temperatures.dailyTemperatures(input)
+            self.assertAlmostEqual(output, result)
