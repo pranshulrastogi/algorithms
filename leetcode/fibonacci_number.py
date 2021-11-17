@@ -10,6 +10,8 @@ def fib(n):
     :rtype: int
     """
     f = [0 for i in range(n + 1)]
+    if n < 2:
+        return n
     f[0] = 0
     f[1] = 1
     for i in range(2, n + 1):
