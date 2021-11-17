@@ -21,6 +21,7 @@ from leetcode import (
     remove_linked_list_elements,
     daily_temperatures,
     fibonacci_number,
+    unique_paths,
 )
 import unittest
 
@@ -197,4 +198,10 @@ class TestLeetcode(unittest.TestCase):
         input_output = [(2, 1), (3, 2), (4, 3)]
         for input, output in input_output:
             result = fibonacci_number.fib(input)
+            self.assertEqual(output, result)
+
+    def test_unique_paths(self):
+        input_output = [([3, 2], 3), ([7, 3], 28), ([3, 3], 6)]
+        for input, output in input_output:
+            result = unique_paths.uniquePaths(input[0], input[1])
             self.assertEqual(output, result)
