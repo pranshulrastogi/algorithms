@@ -20,6 +20,7 @@ from leetcode import (
     minimum_value_to_get_positive_step_by_step_sum,
     remove_linked_list_elements,
     daily_temperatures,
+    fibonacci_number,
 )
 import unittest
 
@@ -191,3 +192,9 @@ class TestLeetcode(unittest.TestCase):
         for input, output in input_output:
             result = daily_temperatures.dailyTemperatures(input)
             self.assertAlmostEqual(output, result)
+
+    def test_fibonacci_number(self):
+        input_output = [(2, 1), (3, 2), (4, 3)]
+        for input, output in input_output:
+            result = fibonacci_number.fib(input)
+            self.assertEqual(output, result)
