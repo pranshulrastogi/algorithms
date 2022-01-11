@@ -22,6 +22,8 @@ from leetcode import (
     daily_temperatures,
     fibonacci_number,
     unique_paths,
+    jump_game_ii,
+    maximum_subarray,
 )
 import unittest
 
@@ -204,4 +206,20 @@ class TestLeetcode(unittest.TestCase):
         input_output = [([3, 2], 3), ([7, 3], 28), ([3, 3], 6)]
         for input, output in input_output:
             result = unique_paths.uniquePaths(input[0], input[1])
+            self.assertEqual(output, result)
+
+    def test_jump_game_ii(self):
+        input_output = [([2, 3, 1, 1, 4], 2), ([2, 3, 0, 1, 4], 2), ([1], 0)]
+        for input, output in input_output:
+            result = jump_game_ii.jump(input)
+            self.assertEqual(output, result)
+
+    def test_maximum_subarray(self):
+        input_output = [
+            ([-2, 1, -3, 4, -1, 2, 1, -5, 4], 6),
+            ([1], 1),
+            ([5, 4, -1, 7, 8], 23),
+        ]
+        for input, output in input_output:
+            result = maximum_subarray.maxSubArray(input)
             self.assertEqual(output, result)
