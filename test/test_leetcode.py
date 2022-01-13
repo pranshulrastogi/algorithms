@@ -25,6 +25,7 @@ from leetcode import (
     jump_game_ii,
     maximum_subarray,
     maximum_sum_circular_subarray,
+    maximum_product_subarray,
 )
 import unittest
 
@@ -233,4 +234,13 @@ class TestLeetcode(unittest.TestCase):
         ]
         for input, output in input_output:
             result = maximum_sum_circular_subarray.maxSubarraySumCircular(input)
+            self.assertEqual(output, result)
+
+    def test_maximum_product_subarray(self):
+        input_output = [
+            ([2, 3, -2, 4], 6),
+            ([-2, 0, -1], 0),
+        ]
+        for input, output in input_output:
+            result = maximum_product_subarray.maxProduct(input)
             self.assertEqual(output, result)
