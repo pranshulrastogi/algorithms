@@ -26,6 +26,7 @@ from leetcode import (
     maximum_subarray,
     maximum_sum_circular_subarray,
     maximum_product_subarray,
+    maximum_length_of_subarray_with_positive_product,
 )
 import unittest
 
@@ -244,3 +245,13 @@ class TestLeetcode(unittest.TestCase):
         for input, output in input_output:
             result = maximum_product_subarray.maxProduct(input)
             self.assertEqual(output, result)
+
+    def test_maximum_length_of_subarray_with_positive_product(self):
+        input_output = [
+            ([1, -2, -3, 4], 4),
+            ([0, 1, -2, -3, -4], 3),
+            ([-1, -2, -3, 0, 1], 2),
+        ]
+        for input, output in input_output:
+            result = maximum_length_of_subarray_with_positive_product.getMaxLen(input)
+            self.assertEqual(result, output)
