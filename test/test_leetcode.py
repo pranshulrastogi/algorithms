@@ -27,6 +27,7 @@ from leetcode import (
     maximum_sum_circular_subarray,
     maximum_product_subarray,
     maximum_length_of_subarray_with_positive_product,
+    best_sightseeing_pair,
 )
 import unittest
 
@@ -254,4 +255,13 @@ class TestLeetcode(unittest.TestCase):
         ]
         for input, output in input_output:
             result = maximum_length_of_subarray_with_positive_product.getMaxLen(input)
+            self.assertEqual(result, output)
+
+    def test_best_sightseeing_pair(self):
+        input_output = [
+            ([8, 1, 5, 2, 6], 11),
+            ([1, 2], 2),
+        ]
+        for input, output in input_output:
+            result = best_sightseeing_pair.maxScoreSightseeingPair(input)
             self.assertEqual(result, output)
