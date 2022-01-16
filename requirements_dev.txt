@@ -1,0 +1,3 @@
+black==21.9b0
+pytest
+pytest-cov
