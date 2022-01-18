@@ -1,4 +1,4 @@
-'''
+"""
 Problem Link: https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/
 Difficulty: Easy
 Problem statement:
@@ -27,15 +27,23 @@ Example 3:
 Input: prices = [7,6,4,3,1]
 Output: 0
 Explanation: In this case, no transaction is done, i.e., max profit = 0.
-'''
-'''
+"""
+"""
 We will follow peak-valley approach, i.e., whenever any price is less thant the earlier price
 we sell and make profit
-'''
-class Solution:
-    def maxProfit(self, prices: List[int]) -> int:
-        profit = 0
-        for i, ele in enumerate(prices[1:], start=1):
-            if ele-prices[i-1] > 0:
-                profit += ele-prices[i-1]
-        return profit
+"""
+
+
+def maxProfit(prices):
+    """
+    :type prices: List[int]
+    :rtype: int
+    """
+    l = len(prices)
+    prev = prices[0]
+    profit = 0
+    for i in range(1, l):
+        if prices[i] > prev:
+            profit += prices[i] - prev
+        prev = prices[i]
+    return profit

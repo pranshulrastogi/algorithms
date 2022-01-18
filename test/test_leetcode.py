@@ -11,6 +11,7 @@ from leetcode import (
     break_a_palindrome,
     guess_number_higher_or_lower,
     best_time_to_buy_and_sell_stock,
+    best_time_to_buy_and_sell_stock_ii,
     best_time_to_buy_and_sell_stock_with_cooldown,
     best_time_to_buy_and_sell_stock_iii,
     reverse_words_in_a_string,
@@ -271,4 +272,14 @@ class TestLeetcode(unittest.TestCase):
         input_output = [([7, 1, 5, 3, 6, 4], 5), ([7, 6, 4, 3, 1], 0)]
         for input, output in input_output:
             result = best_time_to_buy_and_sell_stock.maxProfit(input)
+            self.assertEqual(result, output)
+
+    def test_best_time_to_buy_and_sell_stock_ii(self):
+        input_output = [
+            ([7, 1, 5, 3, 6, 4], 7),
+            ([1, 2, 3, 4, 5], 4),
+            ([7, 6, 4, 3, 1], 0),
+        ]
+        for input, output in input_output:
+            result = best_time_to_buy_and_sell_stock_ii.maxProfit(input)
             self.assertEqual(result, output)
